@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         }
         //apply up force and move forward
         float liftForce = currentSpeed * liftForceMultiplier;
-        GetComponent<Rigidbody>().AddForce(Vector3.up * liftForce);
+       rb.AddForce(Vector3.up * liftForce);
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
 
     }
