@@ -4320,6 +4320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rig_Seagull
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e773405248eae46558751de27b3a4753, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4925,10 +4929,10 @@ Animator:
   m_GameObject: {fileID: 1397518732}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cdcc9d33c63434178842dd312aa73a82, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
