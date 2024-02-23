@@ -338,18 +338,18 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1168.0,
-            "y": -100.25009155273438,
+            "x": -1161.0,
+            "y": -104.5,
             "width": 206.0,
-            "height": 130.50003051757813
+            "height": 130.5
         }
     },
     "m_Slots": [
         {
-            "m_Id": "a030550f75dc4835ab44e8a93d077858"
+            "m_Id": "c3192f67ad8f483fa010b3433a9bfead"
         },
         {
-            "m_Id": "c3192f67ad8f483fa010b3433a9bfead"
+            "m_Id": "ffe83b2d64664ad98a0816fb1020669e"
         }
     ],
     "synonyms": [
@@ -1045,10 +1045,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1052.5,
-            "y": 103.24993896484375,
-            "width": 145.0,
-            "height": 128.5
+            "x": -1089.5,
+            "y": 119.49999237060547,
+            "width": 144.99993896484376,
+            "height": 128.50003051757813
         }
     },
     "m_Slots": [
@@ -1438,30 +1438,6 @@
         "m_SerializableColors": []
     },
     "m_DepthSamplingMode": 2
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.PositionMaterialSlot",
-    "m_ObjectId": "a030550f75dc4835ab44e8a93d077858",
-    "m_Id": 3,
-    "m_DisplayName": "World Space Position",
-    "m_SlotType": 0,
-    "m_Hidden": true,
-    "m_ShaderOutputName": "WorldSpacePosition",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_Labels": [],
-    "m_Space": 2
 }
 
 {
@@ -2115,5 +2091,29 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PositionMaterialSlot",
+    "m_ObjectId": "ffe83b2d64664ad98a0816fb1020669e",
+    "m_Id": 3,
+    "m_DisplayName": "World Space Position",
+    "m_SlotType": 0,
+    "m_Hidden": true,
+    "m_ShaderOutputName": "WorldSpacePosition",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": [],
+    "m_Space": 2
 }
 

@@ -137,8 +137,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 200.0
+            "x": 12.499979019165039,
+            "y": 190.0
         },
         "m_Blocks": [
             {
@@ -151,10 +151,10 @@
                 "m_Id": "8aaee69ef8d748cb88cd7b15bf8121e8"
             },
             {
-                "m_Id": "3efce38a6d4d4b259437fb160a4d8396"
+                "m_Id": "bcef1390556e44d49c3d67b5a114356b"
             },
             {
-                "m_Id": "bcef1390556e44d49c3d67b5a114356b"
+                "m_Id": "3efce38a6d4d4b259437fb160a4d8396"
             },
             {
                 "m_Id": "5cdef9491e1c4dd78f872ffd2ac45beb"
@@ -267,7 +267,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Smoothness",
     "m_StageCapability": 2,
-    "m_Value": 0.5,
+    "m_Value": 0.0,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }
@@ -344,10 +344,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
+            "x": 11.000017166137696,
+            "y": 356.4999694824219,
+            "width": 199.99996948242188,
+            "height": 41.0
         }
     },
     "m_Slots": [
