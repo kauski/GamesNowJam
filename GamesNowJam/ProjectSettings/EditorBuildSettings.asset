@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LevelLya.unity
+    guid: e3e2bdac78761a649bb9aa3360e4893b
   m_configObjects: {}

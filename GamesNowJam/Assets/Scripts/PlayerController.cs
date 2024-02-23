@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
     private float initialMoveSpeed = 5.0f;
     private float liftForceMultiplier = 0.001f;
     private float maxSpeed = 50.0f;
-   
+
+    private float rotationToNormalSpeed = 20.0f;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,11 @@ public class PlayerController : MonoBehaviour
         float horizontalTurn = horizontalInput * turnSpeed * Time.deltaTime;
         //rotate
         transform.Rotate(verticalTurn, horizontalTurn, 0);
+       
+            float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0f, rotationToNormalSpeed * Time.deltaTime);
 
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, angle);
+       
         //adjust speed
         if (speedUp && currentSpeed < maxSpeed)
         {
