@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Guardian"))
         {
             gamemanagerScript.gameOver = true;
-            Debug.Log("Gameover");
+         
         }
     
 
