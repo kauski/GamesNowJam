@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-
+    public Gamemanager gamemanagerScript;
     public PoopBar poopBarScript;
 
     private float speedDecreaseRate = 3.0f;
@@ -30,6 +30,10 @@ public class PlayerController : MonoBehaviour
    
     private void Update()
     {
+        if (!gamemanagerScript.gameOver)
+        {
+
+        
        //get inputs
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -56,16 +60,21 @@ public class PlayerController : MonoBehaviour
         float liftForce = currentSpeed * liftForceMultiplier;
        rb.AddForce(Vector3.up * liftForce);
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
-
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit something");
+       
         if (other.CompareTag("Treat"))
         {
-            Debug.Log("updated hits");
+           
             poopBarScript.UpdatePoopBar(20);
             Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Guardian"))
+        {
+            gamemanagerScript.gameOver = true;
+            Debug.Log("Gameover");
         }
     
 

@@ -7,13 +7,20 @@ public class FireController : MonoBehaviour
     public GameObject poop;
     public GameObject firePoint;
     public PoopBar poopBarScript;
+    public Gamemanager gamemanagerScript;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && poopBarScript.poopAmount > 5.0f)
+        if (!gamemanagerScript.gameOver)
         {
-            poopBarScript.UpdatePoopBar(-5.0f);
-            Fire();
+
+
+            if (Input.GetMouseButtonDown(0) && poopBarScript.poopAmount > 5.0f)
+            {
+                poopBarScript.UpdatePoopBar(-5.0f);
+                Fire();
+            }
         }
     }
     private void Fire()

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Treat
+  - Guardian
   layers:
   - Default
   - TransparentFX
