@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PoopBar : MonoBehaviour
 {
     [SerializeField] Slider poop;
-    [SerializeField] float poopAmount = 30;
+    public float poopAmount = 30;
     // Start is called before the first frame update
     private void Start()
     {

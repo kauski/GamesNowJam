@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
- 
-    
 
+
+    public PoopBar poopBarScript;
 
     private float speedDecreaseRate = 3.0f;
     private float minMoveSpeed = 15.0f;
@@ -58,6 +58,17 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
 
     }
- 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Hit something");
+        if (other.CompareTag("Treat"))
+        {
+            Debug.Log("updated hits");
+            poopBarScript.UpdatePoopBar(20);
+            Destroy(other.gameObject);
+        }
+    
+
+    }
 
 }
