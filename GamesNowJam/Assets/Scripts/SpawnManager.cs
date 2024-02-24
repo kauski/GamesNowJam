@@ -46,12 +46,13 @@ public class SpawnManager : MonoBehaviour
 
 
     }
-   public void Spawn(GameObject[] prefab, GameObject position, List<GameObject> list)
+   public void Spawn(GameObject[] prefab, GameObject[] position, List<GameObject> list)
     {
         GameObject reuseObject = GetInactiveObject(list, prefab);
         if (reuseObject != null)
         {
-            reuseObject.transform.SetPositionAndRotation(position.transform.position, position.transform.rotation);
+            int rand = Random.Range(0, position.Length);
+            reuseObject.transform.SetPositionAndRotation(position[rand].transform.position, position[rand].transform.rotation);
             reuseObject.SetActive(true);
             ActivateChildren(reuseObject);
         }
