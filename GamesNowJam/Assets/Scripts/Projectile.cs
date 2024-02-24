@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-  
-    private float speed = 10.0f;
+    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float lifetime = 5f;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+    public void Set()
+    {
+        GetComponent<Rigidbody>().velocity = speed * transform.forward;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -100)
-        {
+        lifetime -= Time.deltaTime;
+        if (lifetime < 0f)
             Destroy(gameObject);
-        }
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
     private void OnCollisionEnter(Collision collision)
     {

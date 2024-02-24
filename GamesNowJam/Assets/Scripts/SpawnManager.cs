@@ -22,7 +22,7 @@ public class SpawnManager : MonoBehaviour
         spawnPosGuardian = GameObject.FindGameObjectsWithTag("SpawnPositionGuardian");
         CreateObjects(childPrefab, spawnPosChild, objectPoolChild);
         CreateObjects(guardianPrefab, spawnPosGuardian, objectPoolGuardian);
-        Spawn(childPrefab, spawnPosChild[1], objectPoolChild);
+        Spawn(childPrefab, spawnPosChild, objectPoolChild);
     }
 
 
