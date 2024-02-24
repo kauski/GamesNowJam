@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Treat
   - Guardian
+  - SpawnPosition
+  - SpawnPositionChild
+  - SpawnPositionGuardian
   layers:
   - Default
   - TransparentFX
