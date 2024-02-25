@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [Header("References")]
@@ -8,12 +8,14 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform spawnPosition;
     [SerializeField] private Projectile poopPrefab;
     [SerializeField] private Slider poopMeter;
-
+    [SerializeField] private SpawnManager spawnManagerScript;
+    [SerializeField] public GameObject gameEndLose;
     [Header("Game Properties")]
     [SerializeField] private float poopCost = 10f;
     [SerializeField] private float poopRewardedPerTreat = 30f;
     [SerializeField] private float maxPoop = 100f;
-
+    [SerializeField] private int reSpawn = 15;
+    [SerializeField] private int counterSpawn = 0;
     [Header("Movement Properties")]
     [SerializeField] private float baseMoveSpeed = 3f;
     [SerializeField] private float maxBonusSpeed = 5f;
@@ -27,6 +29,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        
+        spawnManagerScript = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         moveSpeed = baseMoveSpeed;
         currentPoopCount = maxPoop;
     }
@@ -83,17 +87,29 @@ public class Player : MonoBehaviour
 
     void UpdateUI()
     {
+        
         poopMeter.value = currentPoopCount / maxPoop;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Treats")
-            currentPoopCount = Mathf.Clamp(currentPoopCount + poopRewardedPerTreat, 0f, maxPoop);
-        else if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Treat")
         {
-            //Player died
-            Debug.Log("Player lost - Do Something");
+            counterSpawn += 1;
+            currentPoopCount = Mathf.Clamp(currentPoopCount + poopRewardedPerTreat, 0f, maxPoop);
+            other.gameObject.SetActive(false);
+            if (counterSpawn >= reSpawn)
+            {
+                spawnManagerScript.Spawn(spawnManagerScript.childPrefab, spawnManagerScript.spawnPosChild, spawnManagerScript.objectPoolChild);
+                counterSpawn = 0;
+            }
+        }
+            
+        else if (other.gameObject.tag == "Guardian")
+        {
+            gameEndLose.SetActive(true);
+            Time.timeScale = 0.0f;
+           
         }
     }
 }

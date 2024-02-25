@@ -27,41 +27,40 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-   
+
     private void Update()
     {
-        if (!gamemanagerScript.gameOver)
-        {
-
         
-       //get inputs
-        float verticalInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
-        bool speedUp = Input.GetKey(KeyCode.Space);
-        float verticalTurn = verticalInput * turnSpeed * Time.deltaTime;
-        float horizontalTurn = horizontalInput * turnSpeed * Time.deltaTime;
-        //rotate
-        transform.Rotate(verticalTurn, horizontalTurn, 0);
-       
+
+
+            //get inputs
+            float verticalInput = Input.GetAxis("Vertical");
+            float horizontalInput = Input.GetAxis("Horizontal");
+            bool speedUp = Input.GetKey(KeyCode.Space);
+            float verticalTurn = verticalInput * turnSpeed * Time.deltaTime;
+            float horizontalTurn = horizontalInput * turnSpeed * Time.deltaTime;
+            //rotate
+            transform.Rotate(verticalTurn, horizontalTurn, 0);
+
             float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0f, rotationToNormalSpeed * Time.deltaTime);
 
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, angle);
-       
-        //adjust speed
-        if (speedUp && currentSpeed < maxSpeed)
-        {
-            currentSpeed += speedIncrease * Time.deltaTime;
+
+            //adjust speed
+            if (speedUp && currentSpeed < maxSpeed)
+            {
+                currentSpeed += speedIncrease * Time.deltaTime;
+            }
+            else
+            {
+                currentSpeed = Mathf.Max(currentSpeed - speedDecreaseRate * Time.deltaTime, minMoveSpeed);
+            }
+            //apply up force and move forward
+            float liftForce = currentSpeed * liftForceMultiplier;
+            rb.AddForce(Vector3.up * liftForce);
+            transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
         }
-        else
-        {
-            currentSpeed = Mathf.Max(currentSpeed - speedDecreaseRate * Time.deltaTime, minMoveSpeed);
-        }
-        //apply up force and move forward
-        float liftForce = currentSpeed * liftForceMultiplier;
-       rb.AddForce(Vector3.up * liftForce);
-        transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
-        }
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
        

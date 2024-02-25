@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    private GameObject[] spawnPosChild;
-    private List<GameObject> objectPoolChild = new List<GameObject>();
+    public GameObject[] spawnPosChild;
+    public List<GameObject> objectPoolChild = new List<GameObject>();
     public GameObject[] childPrefab;
 
 
-    private List<GameObject> objectPoolGuardian = new List<GameObject>();
+    public List<GameObject> objectPoolGuardian = new List<GameObject>();
     public GameObject[] guardianPrefab;
-    private GameObject[] spawnPosGuardian;
+    public GameObject[] spawnPosGuardian;
 
-
+    [SerializeField] int countToSpawn = 15;
+    [SerializeField] int counter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +24,22 @@ public class SpawnManager : MonoBehaviour
         CreateObjects(childPrefab, spawnPosChild, objectPoolChild);
         CreateObjects(guardianPrefab, spawnPosGuardian, objectPoolGuardian);
         Spawn(childPrefab, spawnPosChild, objectPoolChild);
+        Spawn(childPrefab, spawnPosChild, objectPoolChild);
+        Spawn(childPrefab, spawnPosChild, objectPoolChild);
+        Spawn(guardianPrefab, spawnPosGuardian, objectPoolGuardian);
+        Spawn(guardianPrefab, spawnPosGuardian, objectPoolGuardian);
+        Spawn(guardianPrefab, spawnPosGuardian, objectPoolGuardian);
     }
 
-
+    public void CounterGuardian()
+    {
+        counter += 1;
+        if (counter >= countToSpawn)
+        {
+            Spawn(guardianPrefab, spawnPosGuardian, objectPoolGuardian);
+            counter = 0;
+        }
+    }
     void CreateObjects(GameObject[] prefab, GameObject[] position, List<GameObject> pool)
     {
         for (int i = 0; i < position.Length; i++)
@@ -46,15 +60,21 @@ public class SpawnManager : MonoBehaviour
 
 
     }
+   
     public void Spawn(GameObject[] prefab, GameObject[] position, List<GameObject> list)
     {
-        GameObject reuseObject = GetInactiveObject(list, prefab);
-        if (reuseObject != null)
+        for (int i = 0; i < 15; i++)
         {
-            int rand = Random.Range(0, position.Length);
-            reuseObject.transform.SetPositionAndRotation(position[rand].transform.position, position[rand].transform.rotation);
-            reuseObject.SetActive(true);
-            ActivateChildren(reuseObject);
+
+
+            GameObject reuseObject = GetInactiveObject(list, prefab);
+            if (reuseObject != null)
+            {
+                int rand = Random.Range(0, position.Length);
+                reuseObject.transform.SetPositionAndRotation(position[rand].transform.position, position[rand].transform.rotation);
+                reuseObject.SetActive(true);
+                ActivateChildren(reuseObject);
+            }
         }
     }
     void ActivateChildren(GameObject parent)
