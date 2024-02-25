@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.49641275, b: 0.5748176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -411,6 +411,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &257315749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6540755248534916782, guid: 34003d777415a764c9c8a67d56f1e3a7, type: 3}
+  m_PrefabInstance: {fileID: 3887551700519674162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &257315751
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257315749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cdcc9d33c63434178842dd312aa73a82, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &269260654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2484,6 +2510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3229581562369639779, guid: 34003d777415a764c9c8a67d56f1e3a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.232
+      objectReference: {fileID: 0}
     - target: {fileID: 7763264750158493257, guid: 34003d777415a764c9c8a67d56f1e3a7, type: 3}
       propertyPath: m_Name
       value: MainPlayer
@@ -2491,7 +2521,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6540755248534916782, guid: 34003d777415a764c9c8a67d56f1e3a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 257315751}
   m_SourcePrefab: {fileID: 100100000, guid: 34003d777415a764c9c8a67d56f1e3a7, type: 3}
 --- !u!4 &4140863027011468586 stripped
 Transform:
