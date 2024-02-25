@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelLya.unity
     guid: e3e2bdac78761a649bb9aa3360e4893b
   - enabled: 1
     path: Assets/Scenes/KauskiFinal.unity
     guid: 6e97b76cfc80be74a9e019789b74ce1a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menus.unity
     guid: 6ad0e78740dc805409f8e78b74b40842
   m_configObjects: {}
