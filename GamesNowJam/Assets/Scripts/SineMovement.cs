@@ -27,3 +27,4 @@ public class SineMovement : MonoBehaviour
         transform.position = startPosition + transform.up * Mathf.Sin(Time.time * frequency + offset) * magnitude;
     }
 }
+    
