@@ -23092,6 +23092,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 608923552884723894, guid: aa8955f43cda4af4a88b4d34ae797e58, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 608923552884723894, guid: aa8955f43cda4af4a88b4d34ae797e58, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 608923552884723894, guid: aa8955f43cda4af4a88b4d34ae797e58, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2687323751540438315, guid: aa8955f43cda4af4a88b4d34ae797e58, type: 3}
       propertyPath: m_Name
       value: GameplayController
@@ -23187,6 +23199,10 @@ PrefabInstance:
     - target: {fileID: 7605099678619576234, guid: aa8955f43cda4af4a88b4d34ae797e58, type: 3}
       propertyPath: m_FocalLength
       value: 44.78461
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605099678619576234, guid: aa8955f43cda4af4a88b4d34ae797e58, type: 3}
+      propertyPath: far clip plane
+      value: 12000
       objectReference: {fileID: 0}
     - target: {fileID: 7605099678619576234, guid: aa8955f43cda4af4a88b4d34ae797e58, type: 3}
       propertyPath: m_projectionMatrixMode
